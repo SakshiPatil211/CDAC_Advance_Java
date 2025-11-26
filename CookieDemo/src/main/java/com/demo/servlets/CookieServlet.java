@@ -51,8 +51,6 @@ public class CookieServlet extends HttpServlet {
 		} 
 		
 		RequestDispatcher rd = req.getRequestDispatcher("cookies.html");
-		rd.include(req, res);
-		
+		rd.include(req, res);	
 	}
-
 }
