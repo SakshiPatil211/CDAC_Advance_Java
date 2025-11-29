@@ -1,6 +1,4 @@
 package com.demo.service;
-
-import com.demo.beans.Users;
 import com.demo.dao.RegistrationDao;
 import com.demo.dao.RegistrationDaoImp;
 
