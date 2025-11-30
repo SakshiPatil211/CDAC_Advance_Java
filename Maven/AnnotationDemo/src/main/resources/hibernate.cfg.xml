@@ -1,0 +1,22 @@
+<!--  Version 8 MySQL hiberante-cfg.xml example for Hibernate 5  -->
+<hibernate-configuration>
+<session-factory>
+<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+<!--  property name="connection.driver_class">com.mysql.jdbc.Driver</property  -->
+<property name="connection.url">jdbc:mysql://192.168.10.117:3306/dac71?useSSL=false</property>
+<property name="connection.username">dac71</property>
+<property name="connection.password">welcome</property>
+<property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+<property name="connection.pool_size">5</property>
+<!-- property name="dialect">org.hibernate.dialect.MySQLDialect</property -->
+<!--  <property name="current_session_context_class">thread</property>  -->
+<property name="show_sql">true</property>
+<property name="format_sql">true</property>
+<property name="hbm2ddl.auto">update</property>
+<!--  mapping class" /  -->
+<mapping class="com.demo.beans.MyProduct"/>
+<mapping class="com.demo.beans.MyUsers"/>
+ <!-- <mapping resource="MyProduct.hbm.xml"/>
+    <mapping resource="MyUsers.hbm.xml"/> -->
+</session-factory>
+</hibernate-configuration>

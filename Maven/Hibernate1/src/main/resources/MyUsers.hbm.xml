@@ -1,0 +1,9 @@
+<hibernate-mapping>
+	<class name="com.demo.beans.MyUsers">
+		<id name="uid">
+			<generator class="assigned"/>
+		</id>
+		<property name="uname" type="string" column="uname" not-null="true"/>
+		<property name="email" type="string" column="email"/>
+	</class>
+</hibernate-mapping>
