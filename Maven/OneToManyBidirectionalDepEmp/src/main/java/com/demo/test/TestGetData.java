@@ -27,6 +27,10 @@ public class TestGetData {
 		System.out.println(e);
 		System.out.println(e.getDept().getDname());
 		
+		tr.commit();
+		session.close();
+		sf.close();
+		
 		
 
 	}

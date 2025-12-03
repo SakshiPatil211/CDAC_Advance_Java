@@ -28,6 +28,10 @@ public class TestGetData {
 		System.out.println(i);
 		System.out.println("--------------------------------------------------------------------");
 		System.out.println(i.getCset());
+		
+		tr.commit();
+		session.close();
+		sf.close();
 	}
 
 }
