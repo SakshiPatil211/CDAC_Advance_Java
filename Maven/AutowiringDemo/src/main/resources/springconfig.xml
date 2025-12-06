@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation=" http://www.springframework.org/schema/beans 
+https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context 
+https://www.springframework.org/schema/context/spring-context.xsd">
+
+<bean id="sk" class="com.demo.beans.Skill">
+	<property name="skid" value="1"></property>
+	<property name="skname" value="sakshi"></property>
+	<property name="experience" value="10"></property>
+</bean>
+
+<bean id="add" class="com.demo.beans.Address">
+	<property name="street" value="SB Road"></property>
+	<property name="city" value="Pune"></property>
+	<property name="pincode" value="411016"></property>
+</bean>
+
+<bean id="f1" class="com.demo.beans.Faculty">
+	<constructor-arg index="0" value="101"></constructor-arg>
+	<constructor-arg index="1" value="Shweta"></constructor-arg>
+	<constructor-arg index="2" ref="sk"></constructor-arg>
+	<constructor-arg index="3" ref="add"></constructor-arg>
+</bean>
+</beans>

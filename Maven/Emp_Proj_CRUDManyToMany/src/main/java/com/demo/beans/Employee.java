@@ -3,14 +3,17 @@ package com.demo.beans;
 import java.time.LocalDate;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="Employee2")
 public class Employee {
 	@Id
 	@GeneratedValue
@@ -18,8 +21,13 @@ public class Employee {
 	private String ename;
 	private LocalDate hiredate;
 	private double sal;
-	@ManyToMany
-	@JoinColumn(name="project_id")
+	@ManyToMany(fetch=FetchType.EAGER)
+	//@JoinColumn(name="project_id")
+	@JoinTable(
+ 	        name = "emp_project",
+ 	        joinColumns = @JoinColumn(name = "empid"),
+ 	        inverseJoinColumns = @JoinColumn(name = "pid")
+ 	    )
 	Set<Project> pset;
 	
 	public Employee() {

@@ -1,0 +1,51 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation=" http://www.springframework.org/schema/beans 
+https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context 
+https://www.springframework.org/schema/context/spring-context.xsd">
+
+<!-- call default constructor of HelloWorld class -->
+<bean id="hw" class="com.demo.beans.HelloWorld"></bean>
+
+<!-- Setter injection -->
+<bean id="emp1" class="com.demo.beans.Employee">
+	<property name="eid" value="10"></property>
+	<property name="ename" value="Sakshi"></property>
+	<property name="sal" value="100000"></property>
+</bean>
+
+<bean id="emp2" class="com.demo.beans.Employee">
+	<property name="eid" value="11"></property>
+	<property name="ename" value="Sanika"></property>
+	<property name="sal" value="50000"></property>
+</bean>
+
+<!-- Constructor injection -->
+<bean id="emp3" class="com.demo.beans.Employee">
+	<constructor-arg type="int" value="11"></constructor-arg>
+	<constructor-arg type="String" value="Prachi"></constructor-arg>
+	<constructor-arg type="double" value="110000"></constructor-arg>
+</bean>
+<!--  
+<bean id="emp3" class="com.demo.beans.Employee">
+	<constructor-arg index="0" value="11"></constructor-arg>
+	<constructor-arg index="1" value="Prachi"></constructor-arg>
+	<constructor-arg index="2" value="110000"></constructor-arg>
+</bean> -->
+
+<bean id="add1" class="com.demo.beans.Address">
+	<property name="street" value="SB Road"></property>
+	<property name="city" value="Pune"></property>
+	<property name="pincode" value="411016"></property>
+</bean>
+
+<bean id="u1" class="com.demo.beans.MyUser">
+	<property name="uid" value="1"></property>
+	<property name="uname" value="Shruti"></property>
+	<property name="email" value="shruti123@gmail.com"></property>
+	<property name="addr" ref="add1"></property>
+</bean>
+
+</beans>
+
+
+

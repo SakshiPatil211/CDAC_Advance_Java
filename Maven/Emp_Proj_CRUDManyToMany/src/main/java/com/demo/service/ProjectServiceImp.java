@@ -5,6 +5,7 @@ import com.demo.dao.ProjectDaoImp;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Scanner;
 import com.demo.beans.*;
 
@@ -28,5 +29,20 @@ public class ProjectServiceImp implements ProjectService{
 		Project p = new Project(pname,ldt);
 		pdao.save(p);
 		
+	}
+
+	@Override
+	public List<Project> findAllProject() {
+		return pdao.findAllProject();
+	}
+
+	@Override
+	public boolean deleteProject(int id) {
+		return pdao.deleteProject(id);
+	}
+
+	@Override
+	public boolean updateProjectById(int id, String pname) {
+		return pdao.updateProjectById(id,pname);
 	}
 }

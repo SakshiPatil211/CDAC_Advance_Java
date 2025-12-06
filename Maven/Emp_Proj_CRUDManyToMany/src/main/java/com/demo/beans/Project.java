@@ -5,6 +5,7 @@ import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -12,14 +13,14 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="project1")
+@Table(name="project2")
 public class Project {
 	@Id
 	@GeneratedValue
 	private int pid;
 	private String pname;
 	private LocalDate startdate;
-	@ManyToMany(mappedBy="pset", cascade= CascadeType.ALL)
+	@ManyToMany(mappedBy="pset",fetch=FetchType.EAGER)
 	Set<Employee> eset;
 	
 	public Project() {

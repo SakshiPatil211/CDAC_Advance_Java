@@ -1,0 +1,19 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation=" http://www.springframework.org/schema/beans 
+https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context 
+https://www.springframework.org/schema/context/spring-context.xsd">
+
+<bean id="add1" class="com.demo.beans.Address">
+	<property name="street" value="sbroad"></property>
+	<property name="city" value="Pune"></property>
+	<property name="pincode" value="415405"></property>
+</bean>
+
+<bean id="stud" class="com.demo.beans.Student">
+	<property name="id" value="1"></property>
+	<property name="sname" value="Sakshiiiiii"></property>
+	<property name="m1" value="70"></property>
+	<property name="m2" value="80"></property>
+	<property name="addr" ref="add1"></property>
+</bean>
+</beans>

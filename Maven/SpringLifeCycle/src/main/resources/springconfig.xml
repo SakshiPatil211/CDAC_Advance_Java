@@ -1,0 +1,30 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation=" http://www.springframework.org/schema/beans 
+https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context 
+https://www.springframework.org/schema/context/spring-context.xsd">
+
+<bean id="p1" class="com.demo.beans.Product">
+	<constructor-arg index="0" value="101"></constructor-arg>
+	<constructor-arg index="1" value="Chips"></constructor-arg>
+	<constructor-arg index="2" value="10"></constructor-arg>
+	<constructor-arg index="3" value="50.50"></constructor-arg>
+</bean>
+
+<bean id="p2" class="com.demo.beans.Product">
+	<constructor-arg index="0" value="102"></constructor-arg>
+	<constructor-arg index="1" value="Chetos"></constructor-arg>
+	<constructor-arg index="2" value="10"></constructor-arg>
+	<constructor-arg index="3" value="50.50"></constructor-arg>
+</bean>
+
+<bean id="ord1" class="com.demo.beans.Order" init-method="myinit" destroy-method="mydestroy">
+	<property name="orderid" value="100"></property>
+	<property name="cname" value="Sakshi"></property>
+	<property name="plist">
+		<list>
+			<ref bean="p1"/>
+			<ref bean="p2"/>
+		</list>
+	</property>
+</bean>
+</beans>
