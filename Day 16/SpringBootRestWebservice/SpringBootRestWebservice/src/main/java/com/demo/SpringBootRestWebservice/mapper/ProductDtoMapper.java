@@ -21,5 +21,4 @@ public class ProductDtoMapper {
 		}
 		return new ProductDto(prod.getPid(),prod.getPname(),prod.getQty(),prod.getPrice(),prod.getMfgdate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),prod.getCid());
 	}
-
 }
