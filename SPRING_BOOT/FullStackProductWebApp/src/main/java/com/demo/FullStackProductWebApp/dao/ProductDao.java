@@ -1,0 +1,17 @@
+package com.demo.FullStackProductWebApp.dao;
+
+import com.demo.FullStackProductWebApp.beans.*;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ProductDao extends JpaRepository<Product, Integer> {
+	
+	@Query(value="select * from product where price between :lprice and :hprice",nativeQuery = true)
+	//@Query(value="select p from Product p where price between :lpr and :hpr") 
+	List<Product> findByPrice(double lprice, double hprice);
+
+}
